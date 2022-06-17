@@ -10,7 +10,7 @@ conda env create --name env_name --file environment.yml
 
 Activate the conda environment and the run the app:
 ```
-conda activate env_name && python run.py
+python run.py
 ```
 
 <br/><br/>
@@ -18,4 +18,4 @@ conda activate env_name && python run.py
 **Result**
 
 <p align="center">
-  <img src="C:\Users\ibrah\Downloads\recognize_digit\Screenshot.png" width="430" height=400>
+  <img src="https://raw.githubusercontent.com/ibrahimovnijat/recognize_digit/main/Screenshot.png" width="430" height=400>
