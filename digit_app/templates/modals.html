@@ -1,0 +1,92 @@
+
+<div class="modal fade" id="modal_message" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal_message_title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal_message_body">
+          <p>Message</p>
+        </div>
+        <div class="modal-footer" id="modal_message_footer">
+          <div id="button_container"></div>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_message_yes_no" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_message_title_yes_no">Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal_message_body_yes_no">
+        <p>Message</p>
+      </div>
+      <div class="modal-footer" id="modal_message_footer">
+        <div id="button_container"></div>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" onclick="_yesBtnCallback()">Yes</button>
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" onclick="_noBtnCallback()">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modal_message_scroll" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_message_title_scroll">Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modal_message_body_scroll">
+        <p>Message</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+let YES_BUTTON_CLICKED = false;
+let NO_BUTTON_CLICKED = false;
+
+function showMessageBox(msg_header, msg_body, button="OK", scrollable=false) {
+  let myModal;
+  if (scrollable == true) {
+    myModal = new bootstrap.Modal(document.getElementById("modal_message_scroll"));
+    document.getElementById("modal_message_title_scroll").innerHTML = msg_header;
+    document.getElementById("modal_message_body_scroll").innerHTML = msg_body;
+  } else {    
+    if (button == "OK") {
+      myModal = new bootstrap.Modal(document.getElementById("modal_message")); 
+      document.getElementById("modal_message_title").innerHTML = msg_header;
+      document.getElementById("modal_message_body").innerHTML = msg_body;
+
+    } else if (button == "YES_NO") {
+      myModal = new bootstrap.Modal(document.getElementById("modal_message_yes_no"));
+      document.getElementById("modal_message_title_yes_no").innerHTML = msg_header;
+      document.getElementById("modal_message_body_yes_no").innerHTML = msg_body;
+    } else {}
+  }
+  myModal.show();
+}
+
+// function _yesBtnCallback() {
+//   YES_BUTTON_CLICKED = true;
+//   NO_BUTTON_CLICKED = false;
+// }
+// function _noBtnCallback() {
+//   YES_BUTTON_CLICKED = false;
+//   NO_BUTTON_CLICKED = true;
+// }
+
+</script>

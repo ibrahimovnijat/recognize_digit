@@ -1,0 +1,26 @@
+#canvas {
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color:ghostwhite
+}
+.button1 {
+  background-color:darkcyan;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button2 {
+  background-color:firebrick;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
